@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Showdown from 'showdown';
 import MarkdownInput from "./markdown_input";
 
+const converter = new Showdown.Converter();
 
 const Note = ({notes, setNotes, activNote, setActivNote}) => {
   // console.log(notes) 
@@ -13,6 +15,9 @@ const Note = ({notes, setNotes, activNote, setActivNote}) => {
   const [title, setTitle] = useState(activNote.title)
   const [text, setText] = useState(activNote.text)
   
+  const convertMarkdown = (text) => {
+    return {__html:converter.makeHtml(text)}
+  }
 
   if (activNote.id === null){
     return (
@@ -30,8 +35,9 @@ const Note = ({notes, setNotes, activNote, setActivNote}) => {
       <div className="card">
         <div className="card-top">
           {id}
-          <h1>{title}</h1>
-          {text}
+          <h1>{title}{console.log(convertMarkdown(text))}</h1>
+          <div dangerouslySetInnerHTML={convertMarkdown(text)} />
+          
         </div>
         <hr/>
         <div className="card-bottom">
