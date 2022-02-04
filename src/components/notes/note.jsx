@@ -4,9 +4,9 @@ import MarkdownInput from "./markdown_input";
 
 const converter = new Showdown.Converter();
 
-const Note = ({notes, setNotes, activNote, setActivNote}) => {
+const Note = ({notes, setNotes, activNote, setActivNote, save}) => {
   // console.log(notes) 
-  console.log(activNote)
+  // console.log(activNote)
   if(activNote === null){
     activNote = {id:null, title:'', text:''}
   }
@@ -24,6 +24,7 @@ const Note = ({notes, setNotes, activNote, setActivNote}) => {
       <div className="card">
         <div className="card-top">
           <h1>Créer ou sélectionner une note</h1>
+          <p>Rédiger le texte de la note au format markdown</p>
         </div>
         <hr/>
         <div className="card-bottom">
@@ -35,7 +36,7 @@ const Note = ({notes, setNotes, activNote, setActivNote}) => {
       <div className="card">
         <div className="card-top">
           {id}
-          <h1>{title}{console.log(convertMarkdown(text))}</h1>
+          <h1>{title}</h1>
           <div dangerouslySetInnerHTML={convertMarkdown(text)} />
           
         </div>
@@ -51,6 +52,7 @@ const Note = ({notes, setNotes, activNote, setActivNote}) => {
             text={text}
             setText={setText}
             activNote={activNote}
+            save={save}
           />
         </div>
       </div>

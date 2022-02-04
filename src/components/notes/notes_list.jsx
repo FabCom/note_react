@@ -10,7 +10,7 @@ const Notes = ({notes, setNotes, activNote, setActivNote}) => {
 
   const deleteNote = ({id}) => {
     setNotes(notes.filter((note) => note.id !== id))
-    console.log(notes)
+    // console.log(notes)
 
   }
   return (

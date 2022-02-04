@@ -1,7 +1,7 @@
 import React, { useEffect} from "react";
 
-const MarkdownInput = ({notes, setNotes, id, setId, title, setTitle,text,setText, activNote, setActiveNote}) => {
-  console.log(activNote)
+const MarkdownInput = ({notes, setNotes, id, setId, title, setTitle,text,setText, activNote , save}) => {
+  // console.log(activNote)
   const updateNote = (title, id, text) => {
     const newNote = notes.map((note)=> {
       if (note.id === id) {
@@ -23,10 +23,8 @@ const MarkdownInput = ({notes, setNotes, id, setId, title, setTitle,text,setText
 
   const onFormSubmit = (event) => {
     event.preventDefault()
-    console.log(notes)
     updateNote(title,id,text)
-    
-    console.log(notes)
+    save()
   }
 
   const onTitleChange = (event) => {
