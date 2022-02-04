@@ -1,0 +1,42 @@
+.btn-add{
+  display: block;
+  width: 100%;
+  background: red;
+  border: none;
+  color:  white;
+  margin-bottom: 20px;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.btn-select{
+  display: block;
+  width: 100%;
+  border: solid 1px red;
+  border-radius: 20px;
+  background: black;
+  color: white;
+  padding: 5px;
+  transition: 0.5s;
+
+  &:hover{
+    cursor: pointer;
+    background: red
+    ;
+  }
+}
+
+.btn-delete{
+  background: black;
+  color: red;
+  border: none;
+  transition: 0.5s;
+
+  &:hover{
+    background: red;
+    border-radius: 5px;
+    color: white;
+  }
+}

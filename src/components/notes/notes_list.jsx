@@ -1,6 +1,6 @@
 import React from "react";
 
-const Notes = ({notes, setNotes, activNote, setActivNote}) => {
+const Notes = ({notes, setNotes, activNote, setActivNote, save}) => {
 
 
   const onNoteSelected = (event, note) => {
@@ -10,6 +10,7 @@ const Notes = ({notes, setNotes, activNote, setActivNote}) => {
 
   const deleteNote = ({id}) => {
     setNotes(notes.filter((note) => note.id !== id))
+    save()
     // console.log(notes)
 
   }
@@ -19,9 +20,13 @@ const Notes = ({notes, setNotes, activNote, setActivNote}) => {
       notes.map((note) => 
         (
           
-        <div className="card-reduced" key={note.id} onClick={(e) => onNoteSelected(e, note)} >
-          <button >{note.title}</button>
-          <button onClick={() => deleteNote(note)} >X</button>
+        <div className="card-reduced" key={note.id}  >
+          <div className="card-reduced-left">
+            <button className="btn-select" onClick={(e) => onNoteSelected(e, note)} >{note.title}</button>
+          </div>
+          <div className="card-reduced-right">
+            <button className="btn-delete" onClick={() => deleteNote(note)} >X</button>
+          </div>
         </div>
         )
       )

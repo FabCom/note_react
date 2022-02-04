@@ -1,18 +1,47 @@
 .card{
+  display: flex;
+  flex-direction: column;
   margin: 10px;
   padding: 10px;
+  height: 95%;
   
   .card-top{
-    height: 300px;
+    flex: 0 0 50%;
+    height: 50%;
+    width: 100%;
   }
 
   .card-bottom{
+    flex: 0 0 50%;
     height: 50%;
-
+    width: 100%;
   }
 
   form{
     display: flex;
     flex-direction: column;
+    height: 100%;
+
+    textarea{
+      height: 100%;
+    }
   }
 }
+
+.card-reduced{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .card-reduced-left{
+    width: 90%;
+  }
+
+  .card-reduced-right{
+    width: 5%;
+    margin-left: 5px;
+  }
+}
+

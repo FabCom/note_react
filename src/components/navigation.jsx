@@ -6,7 +6,7 @@ export default class Menu extends React.Component{
       items:[
         {id: 1, text:'Accueil', path:'/'},
         {id: 2, text:'Notes', path:'/dashboard'},
-        {id: 3, text:'Sauvegarder', path:'/save'}
+        {id: 3, text:'Paramètres', path:'/params'}
       ]
     }
 
